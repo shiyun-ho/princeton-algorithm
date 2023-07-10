@@ -12,17 +12,32 @@ import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 
+
 public class RandomWord {
     public static void main(String[] args) {
-        String result = "";
+        //initialise idx to be 0
+        int idx = 0; 
+        String championWord = ""; 
 
-        for (int i = 0; !StdIn.isEmpty() ; i++) {
-            String value = StdIn.readString();
-            if (StdRandom.bernoulli(1.0 / i)) {
-                result = value;
+        //while input has next token
+        while (!StdIn.isEmpty()){
+            //inputWord is next token from standard input and returns as a String.
+            //inputWord is now the second token (i.e. next token)
+            String inputWord = StdIn.readString(); 
+            
+            //increase index
+            //increase index again
+            idx++;
+
+            //if probability of 1.00 / 1
+            //second word: if probability is 1.00 / 2
+            if (StdRandom.bernoulli(1.0 / (idx))){
+                //printed championWord is the word
+                //printed championWord is the second word
+                championWord = inputWord; 
             }
-        }
 
-        StdOut.println(result);
+        }
+        StdOut.println(championWord);
     }
 }
